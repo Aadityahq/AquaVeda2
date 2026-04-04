@@ -2,8 +2,8 @@
 
 ## 🔥 PHASE 1 — FOUNDATION
 
-- [ ] Backend setup
-- [ ] Frontend setup
+- [x] Backend setup
+- [x] Frontend setup
 - [ ] Auth system
 - [ ] Role system
 
