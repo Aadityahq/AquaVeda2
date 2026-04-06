@@ -69,6 +69,7 @@ Aquaveda is a geo-intelligent water conservation platform combining knowledge sh
 - Shared API response contract introduced with centralized error and not-found shapes
 - Wiki module started with article model, protected creation, expert approval, and approved-only public listing
 - Wiki moderation lifecycle completed with author-only draft edits, expert or admin reject flow, and per-user article listing
+- Geo issues module started with geospatial issue model, authenticated issue reporting, issue listing, and nearby issue queries
 
 ---
 

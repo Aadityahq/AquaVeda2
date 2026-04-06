@@ -4,6 +4,7 @@ import morgan from "morgan";
 
 import healthRoutes from "./routes/healthRoutes.js";
 import authRoutes from "./modules/auth/auth.routes.js";
+import issueRoutes from "./modules/issues/issue.routes.js";
 import wikiRoutes from "./modules/wiki/wiki.routes.js";
 import { notFound } from "./middlewares/notFound.js";
 import { errorHandler } from "./middlewares/error.middleware.js";
@@ -20,6 +21,7 @@ app.use(morgan("dev"));
 
 app.use("/api/health", healthRoutes);
 app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/issues", issueRoutes);
 app.use("/api/v1/wiki", wikiRoutes);
 
 app.get("/", (req, res) => {

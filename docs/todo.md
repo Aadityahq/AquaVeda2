@@ -18,8 +18,9 @@
 
 ## 🌍 PHASE 3 — GEO ISSUES
 
-- [ ] Issue model
-- [ ] Add issue
+- [x] Issue model
+- [x] Add issue
+- [x] Geo queries (nearby)
 - [ ] Leaflet integration
 - [ ] Map filters
 
@@ -107,13 +108,14 @@ Exit criteria:
 Goal: enable issue reporting and map visualization.
 
 - [ ] Issue model (location, severity, images, status, owner)
-- [ ] Add issue endpoint with validation
-- [ ] List/filter issues endpoint (region, severity, status)
+- [x] Add issue endpoint with validation
+- [x] List issues endpoint
+- [ ] Filter issues endpoint (region, severity, status)
 - [ ] Leaflet map view with markers and filters
 
 Exit criteria:
 
-- [ ] Authenticated user can report an issue with coordinates
+- [x] Authenticated user can report an issue with coordinates
 - [ ] Map renders issues and supports basic filters
 
 ### Sprint 4 - Community + AI v1
