@@ -7,6 +7,7 @@ import aiRoutes from "./modules/ai/ai.routes.js";
 import authRoutes from "./modules/auth/auth.routes.js";
 import commentRoutes from "./modules/comments/comment.routes.js";
 import issueRoutes from "./modules/issues/issue.routes.js";
+import projectRoutes from "./modules/projects/project.routes.js";
 import wikiRoutes from "./modules/wiki/wiki.routes.js";
 import { notFound } from "./middlewares/notFound.js";
 import { errorHandler } from "./middlewares/error.middleware.js";
@@ -26,6 +27,7 @@ app.use("/api/v1/ai", aiRoutes);
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/comments", commentRoutes);
 app.use("/api/v1/issues", issueRoutes);
+app.use("/api/v1/projects", projectRoutes);
 app.use("/api/v1/wiki", wikiRoutes);
 
 app.get("/", (req, res) => {

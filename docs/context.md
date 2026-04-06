@@ -73,6 +73,7 @@ Aquaveda is a geo-intelligent water conservation platform combining knowledge sh
 - Geo visualization layer added with issue filtering API and Leaflet map rendering for marker-based issue exploration
 - AI layer added with rule-based recommendations per issue context and map popup suggestion retrieval
 - Community layer added with comments and one-level threaded replies for issue discussions
+- Projects layer added to convert issues into collaborative projects with contributors and basic progress tracking
 
 ---
 

@@ -41,9 +41,9 @@
 
 ## 🏗️ PHASE 7 — PROJECTS
 
-- [ ] Project model
-- [ ] Join or leave project
-- [ ] Progress tracking
+- [x] Project model
+- [x] Join project
+- [x] Progress tracking (basic)
 
 ## 🎮 PHASE 8 — ENGAGEMENT
 
