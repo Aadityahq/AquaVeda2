@@ -1,49 +1,157 @@
-# Aquaveda 🌊
+# AquaVeda
 
-Aquaveda is a geo-intelligent, AI-assisted, community-driven platform designed to tackle water scarcity through knowledge sharing, collaboration, and data-driven insights.
+AquaVeda is a geo-intelligent, AI-assisted, community-driven platform for water conservation. It combines moderated knowledge sharing, map-based issue reporting, collaborative projects, and rule-based recommendations into one product system.
 
-## 🌍 Vision
+## Overview
 
-To create a global ecosystem where communities, experts, and organizations collaborate to solve water-related challenges using technology and shared knowledge.
+AquaVeda is designed to help communities report water problems, learn from verified knowledge, discuss solutions, and organize action around real-world issues.
 
-## 🚀 Core Features
+The current implementation includes:
 
-- 📚 Wiki-based Knowledge Hub
-- 🌍 Geo-mapped Water Issues (Leaflet)
-- 🤝 Community Discussions and Contributions
-- 🧠 AI-powered Recommendations (Rule-based to ML-ready)
-- 🏗️ Collaborative Water Projects
-- 📊 Analytics and Impact Dashboard
+- JWT auth and role-based access control
+- Moderated wiki system with draft, approve, reject, and ownership rules
+- Geo-tagged issues with map-ready data and filters
+- Leaflet map visualization in the client
+- Rule-based AI recommendations
+- Comment threads for issue discussions
+- Collaborative projects with contributors and progress tracking
 
-## 🧱 Tech Stack
+## Architecture
 
-### Frontend
+Frontend -> Backend API -> MongoDB -> AI Layer -> Map Layer
 
-- React.js
-- Tailwind CSS
+### Modules
 
-### Backend Run
+- Auth: register, login, protected profile access, and role guards
+- Wiki: knowledge articles with moderation workflow
+- Issues: geo-tagged water issues, filtering, and nearby queries
+- Maps: Leaflet-based visualization with filter controls
+- AI: rule-based recommendation engine for issue guidance
+- Community: comments and threaded replies
+- Projects: collaboration layer for turning issues into action
 
-- Node.js
-- Express.js
+## Tech Stack
 
-### Database
+| Layer | Technology |
+| --- | --- |
+| Frontend | React, React Router, Vite, Leaflet, react-leaflet |
+| Backend | Node.js, Express |
+| Database | MongoDB, Mongoose |
+| Auth | JWT, bcrypt |
+| AI | Rule-based engine, prepared for Gemini/LLM expansion |
 
-- MongoDB
+## Project Structure
 
-### Maps
+```text
+AquaVeda/
+	client/
+	server/
+	docs/
+	ai-service/
+```
 
-- Leaflet.js
+- `client`: React app with map UI and issue interactions
+- `server`: Express API with auth, wiki, issues, comments, AI, and projects
+- `docs`: context, logs, todo, bugs, and planning notes
+- `ai-service`: reserved for future external AI/service experiments
+
+## Core Features
+
+### Auth and Access Control
+
+- Register and login endpoints
+- JWT-protected routes
+- USER, EXPERT, and ADMIN roles
+- Seeded admin and expert accounts for testing
+
+### Knowledge System
+
+- Draft article creation
+- Author-only edits while pending
+- Expert/admin approval and reject flow
+- Public visibility only for approved content
+
+### Geo Issues
+
+- Issue reporting with coordinates
+- 2dsphere geospatial indexing
+- Nearby lookup and filter endpoints
+- Map-ready response formatting
+
+### Map Layer
+
+- Leaflet visualization
+- Severity and status filters
+- Popup actions for AI suggestions and comments
 
 ### AI Layer
 
-- Rule-based engine (upgradeable to ML)
+- Deterministic recommendation rules
+- Issue-specific guidance endpoint
+- Hybrid AI strategy documented for later LLM integration
 
----
+### Community Layer
 
-## ⚙️ Setup Instructions
+- Issue comments
+- Single-level threaded replies
+- Validation for discussion queries and writes
 
-### Backend
+### Projects Layer
+
+- Create projects from real issues
+- Join collaborative projects
+- Track contributor lists and progress
+- Creator-controlled progress updates
+
+## API Highlights
+
+### Auth
+
+- `POST /api/v1/auth/register`
+- `POST /api/v1/auth/login`
+- `GET /api/v1/auth/me`
+
+### Wiki
+
+- `POST /api/v1/wiki`
+- `GET /api/v1/wiki`
+- `GET /api/v1/wiki/mine`
+- `PATCH /api/v1/wiki/:id`
+- `POST /api/v1/wiki/:id/approve`
+- `POST /api/v1/wiki/:id/reject`
+
+### Issues
+
+- `POST /api/v1/issues`
+- `GET /api/v1/issues`
+- `GET /api/v1/issues/filter`
+- `GET /api/v1/issues/map`
+- `GET /api/v1/issues/nearby`
+
+### Comments
+
+- `GET /api/v1/comments?refType=ISSUE|WIKI&refId=...`
+- `POST /api/v1/comments`
+
+### AI
+
+- `GET /api/v1/ai/recommend/:id`
+
+### Projects
+
+- `POST /api/v1/projects`
+- `GET /api/v1/projects`
+- `POST /api/v1/projects/:id/join`
+- `PATCH /api/v1/projects/:id/progress`
+
+## Setup
+
+### Prerequisites
+
+- Node.js 18+ recommended
+- MongoDB running locally or Atlas connection string
+
+### Server
 
 ```bash
 cd server
@@ -51,7 +159,7 @@ npm install
 npm run dev
 ```
 
-### Frontend Run
+### Client
 
 ```bash
 cd client
@@ -59,26 +167,69 @@ npm install
 npm run dev
 ```
 
----
+### Seed Users
 
-## 📜 Development Rules (MANDATORY)
+```bash
+cd server
+npm run seed:users
+```
 
-- Every feature must update `context.md`
-- Every change must be logged in `logs.md`
-- Every bug must be recorded in `bugs.md`
+## Environment Variables
+
+### Server
+
+```env
+PORT=5000
+MONGO_URI=mongodb://localhost:27017/
+CLIENT_URL=http://localhost:3000
+JWT_SECRET=change_me_in_dev
+JWT_EXPIRES=7d
+```
+
+### Client
+
+```env
+VITE_API_URL=http://localhost:5000/api
+```
+
+### Optional Future AI
+
+```env
+GEMINI_API_KEY=your_api_key_here
+```
+
+## Available Scripts
+
+### Server
+
+- `npm run dev`
+- `npm start`
+- `npm run seed:users`
+
+### Client
+
+- `npm run dev`
+- `npm run build`
+- `npm run preview`
+
+## Documentation Rules
+
+- Every feature must update `docs/context.md`
+- Every change must be logged in `docs/logs.md`
+- Every bug must be recorded in `docs/bugs.md`
 - No undocumented feature is allowed
 
----
+## Future Scope
 
-## 🧠 Future Scope
-
-- ML-based recommendation engine
-- Real-time water data integration
+- Gemini/LLM hybrid recommendation layer
 - NGO or government collaboration modules
+- Real-time water data integration
 - Mobile application
 
----
+## Status
 
-## 👨‍💻 Author
+AquaVeda currently includes the complete core system: auth, moderated wiki, geo issues, map visualization, AI suggestions, community discussions, and projects.
 
-Built as a national-level project (SIH) and extended into a full-scale product.
+## Author
+
+Built as a national-level project and extended into a full product architecture.
