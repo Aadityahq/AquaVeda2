@@ -21,8 +21,8 @@
 - [x] Issue model
 - [x] Add issue
 - [x] Geo queries (nearby)
-- [ ] Leaflet integration
-- [ ] Map filters
+- [x] Leaflet integration
+- [x] Map filters
 
 ## 🤝 PHASE 4 — COMMUNITY
 
@@ -107,16 +107,16 @@ Exit criteria:
 
 Goal: enable issue reporting and map visualization.
 
-- [ ] Issue model (location, severity, images, status, owner)
+- [x] Issue model (location, severity, images, status, owner)
 - [x] Add issue endpoint with validation
 - [x] List issues endpoint
-- [ ] Filter issues endpoint (region, severity, status)
-- [ ] Leaflet map view with markers and filters
+- [x] Filter issues endpoint (region, severity, status)
+- [x] Leaflet map view with markers and filters
 
 Exit criteria:
 
 - [x] Authenticated user can report an issue with coordinates
-- [ ] Map renders issues and supports basic filters
+- [x] Map renders issues and supports basic filters
 
 ### Sprint 4 - Community + AI v1
 

@@ -1,4 +1,5 @@
 import { error, success } from "../../utils/response.js";
+import { formatForMap } from "../../utils/geo.js";
 import * as issueService from "./issue.service.js";
 
 const isValidCoordinate = (lng, lat) => {
@@ -34,6 +35,25 @@ export const getNearby = async (req, res) => {
 
     const issues = await issueService.getNearbyIssues(lng, lat);
     return success(res, issues, "Nearby issues fetched");
+  } catch (err) {
+    return error(res, err.message, 400);
+  }
+};
+
+export const getFiltered = async (req, res) => {
+  try {
+    const issues = await issueService.getFilteredIssues(req.query);
+    return success(res, issues, "Filtered issues fetched");
+  } catch (err) {
+    return error(res, err.message, 400);
+  }
+};
+
+export const getMapData = async (req, res) => {
+  try {
+    const issues = await issueService.getFilteredIssues(req.query);
+    const data = formatForMap(issues);
+    return success(res, data, "Map issues fetched");
   } catch (err) {
     return error(res, err.message, 400);
   }

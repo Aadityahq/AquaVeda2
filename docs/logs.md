@@ -22,3 +22,4 @@
 [2026-04-07] - Wiki - Article model, create endpoint, approval endpoint, and public-approved listing workflow implemented
 [2026-04-07] - Wiki - Edit, reject, ownership checks, and user article view implemented and validated
 [2026-04-07] - Issues - Geo-based issue model, reporting endpoint, listing endpoint, and nearby query implemented and validated
+[2026-04-07] - Issues - Filter API, map data API, and Leaflet frontend map with filters implemented and validated

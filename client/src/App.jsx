@@ -1,11 +1,15 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import IssueMapPage from "./pages/IssueMapPage.jsx";
 
 function Home() {
   return (
     <main style={{ fontFamily: "system-ui, sans-serif", padding: "2rem" }}>
       <h1>Aquaveda</h1>
       <p>Geo-intelligent water conservation platform foundation is live.</p>
-      <Link to="/health">Check health</Link>
+      <div style={{ display: "flex", gap: "1rem" }}>
+        <Link to="/health">Check health</Link>
+        <Link to="/issues-map">Open issues map</Link>
+      </div>
     </main>
   );
 }
@@ -25,6 +29,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/health" element={<Health />} />
+        <Route path="/issues-map" element={<IssueMapPage />} />
       </Routes>
     </BrowserRouter>
   );

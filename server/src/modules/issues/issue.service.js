@@ -24,3 +24,21 @@ export const getNearbyIssues = async (lng, lat) => {
     }
   }).populate("reportedBy", "name");
 };
+
+export const getFilteredIssues = async (filters) => {
+  const query = {};
+
+  if (filters.severity) {
+    query.severity = filters.severity;
+  }
+
+  if (filters.status) {
+    query.status = filters.status;
+  }
+
+  if (filters.region) {
+    query.region = filters.region;
+  }
+
+  return Issue.find(query).sort({ createdAt: -1 }).populate("reportedBy", "name");
+};

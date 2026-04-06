@@ -34,6 +34,11 @@ const issueSchema = new mongoose.Schema(
       enum: ["LOW", "MEDIUM", "HIGH", "CRITICAL"],
       default: "LOW"
     },
+    region: {
+      type: String,
+      default: "global",
+      trim: true
+    },
     images: [String],
     reportedBy: {
       type: mongoose.Schema.Types.ObjectId,

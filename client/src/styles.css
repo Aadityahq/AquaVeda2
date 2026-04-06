@@ -6,8 +6,58 @@ body {
   margin: 0;
   background: #f6faf9;
   color: #123;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 a {
   color: #0f766e;
+}
+
+.map-page {
+  padding: 1.25rem;
+}
+
+.map-header h1 {
+  margin: 0;
+}
+
+.map-header p {
+  margin: 0.5rem 0 1rem;
+}
+
+.map-filters {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.map-filters label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-weight: 600;
+}
+
+.map-filters select {
+  min-width: 10rem;
+  padding: 0.4rem 0.6rem;
+}
+
+.issue-map {
+  height: 65vh;
+  min-height: 380px;
+  border: 1px solid #b8d9d3;
+  border-radius: 0.5rem;
+}
+
+.error-text {
+  color: #b91c1c;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .issue-map {
+    height: 58vh;
+  }
 }
