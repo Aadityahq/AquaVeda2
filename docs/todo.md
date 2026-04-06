@@ -31,8 +31,8 @@
 
 ## 🧠 PHASE 5 — AI ENGINE
 
-- [ ] Rule-based recommendation engine
-- [ ] API endpoint
+- [x] Rule-based recommendation engine
+- [x] API endpoint
 
 ## 📊 PHASE 6 — DASHBOARD
 
@@ -124,13 +124,13 @@ Goal: bring collaboration and first recommendation value.
 
 - [ ] Comments on articles/issues
 - [ ] Thread replies (single depth initially)
-- [ ] Rule-based recommendation service
-- [ ] Recommendation endpoint by issue/article context
+- [x] Rule-based recommendation service
+- [x] Recommendation endpoint by issue/article context
 
 Exit criteria:
 
 - [ ] Users can discuss content via comments
-- [ ] Recommendation API returns deterministic suggestions from rule set
+- [x] Recommendation API returns deterministic suggestions from rule set
 
 ### Sprint 5 - Dashboards + Projects + Quality
 
@@ -164,3 +164,12 @@ Exit criteria:
 - Missing validation and auth checks causing rework
 - Map UX complexity (cluster/filter performance)
 - Documentation drift if logs/context are not updated per feature
+
+---
+
+## Deferred Later (Not In Current Scope)
+
+- [ ] Hybrid AI layer: keep rule-based engine as primary and add optional Gemini-powered contextual suggestions
+- [ ] Add endpoint design for smart recommendations: ruleBased + aiGenerated response contract
+- [ ] Trigger policy: call LLM only on explicit user action (never on every issue fetch)
+- [ ] Add safeguards before rollout: rate limiting, caching, fallback behavior when LLM is unavailable

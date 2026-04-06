@@ -56,6 +56,26 @@ a {
   font-weight: 600;
 }
 
+.suggest-btn {
+  margin-top: 0.5rem;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid #0f766e;
+  border-radius: 0.3rem;
+  background: #0f766e;
+  color: #fff;
+  cursor: pointer;
+}
+
+.suggest-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.suggest-list {
+  margin: 0.5rem 0 0;
+  padding-left: 1rem;
+}
+
 @media (max-width: 768px) {
   .issue-map {
     height: 58vh;

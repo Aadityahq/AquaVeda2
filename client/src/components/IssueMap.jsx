@@ -8,7 +8,12 @@ const severityColors = {
   CRITICAL: "#991b1b"
 };
 
-export default function IssueMap({ issues }) {
+export default function IssueMap({
+  issues,
+  onGetSuggestions,
+  recommendationsByIssue,
+  loadingIssueId
+}) {
   return (
     <MapContainer center={[23.52, 87.32]} zoom={10} className="issue-map">
       <TileLayer
@@ -32,6 +37,21 @@ export default function IssueMap({ issues }) {
             Severity: {issue.severity}
             <br />
             Status: {issue.status}
+            <br />
+            <button
+              className="suggest-btn"
+              onClick={() => onGetSuggestions(issue.id)}
+              disabled={loadingIssueId === issue.id}
+            >
+              {loadingIssueId === issue.id ? "Loading..." : "Get Suggestions"}
+            </button>
+            {Array.isArray(recommendationsByIssue[issue.id]) && (
+              <ul className="suggest-list">
+                {recommendationsByIssue[issue.id].map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            )}
           </Popup>
         </CircleMarker>
       ))}

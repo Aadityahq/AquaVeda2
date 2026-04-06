@@ -71,6 +71,7 @@ Aquaveda is a geo-intelligent water conservation platform combining knowledge sh
 - Wiki moderation lifecycle completed with author-only draft edits, expert or admin reject flow, and per-user article listing
 - Geo issues module started with geospatial issue model, authenticated issue reporting, issue listing, and nearby issue queries
 - Geo visualization layer added with issue filtering API and Leaflet map rendering for marker-based issue exploration
+- AI layer added with rule-based recommendations per issue context and map popup suggestion retrieval
 
 ---
 
@@ -118,3 +119,15 @@ Frontend -> Backend -> DB -> AI Layer -> Map Layer
 - Real-time IoT integration
 - Blockchain
 - Paid monetization
+
+---
+
+## Deferred AI Strategy Note
+
+- Gemini LLM integration is planned as a secondary intelligence layer, not a replacement for rule-based recommendations.
+- Preferred architecture for later:
+	- Rule engine returns deterministic guidance first.
+	- LLM returns contextual explanation and additional suggestions.
+- Call policy for cost and latency control:
+	- Trigger only when user explicitly asks for AI suggestions.
+	- Avoid automatic LLM calls during issue list or map loads.

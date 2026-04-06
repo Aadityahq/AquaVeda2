@@ -29,4 +29,8 @@ export const getIssueMapData = async (filters = {}) => {
 	return fetchJson(endpoint);
 };
 
+export const getIssueRecommendations = async (issueId) => {
+	return fetchJson(`${API_URL}/v1/ai/recommend/${issueId}`);
+};
+
 export default API_URL;

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import IssueMap from "../components/IssueMap.jsx";
-import { getIssueMapData } from "../services/api.js";
+import { getIssueMapData, getIssueRecommendations } from "../services/api.js";
 
 const severityOptions = ["", "LOW", "MEDIUM", "HIGH", "CRITICAL"];
 const statusOptions = ["", "OPEN", "IN_PROGRESS", "RESOLVED"];
@@ -23,6 +23,8 @@ export default function IssueMapPage() {
   const [issues, setIssues] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [loadingIssueId, setLoadingIssueId] = useState("");
+  const [recommendationsByIssue, setRecommendationsByIssue] = useState({});
   const [filters, setFilters] = useState({ severity: "", status: "" });
 
   const queryString = useMemo(() => buildQuery(filters), [filters]);
@@ -44,6 +46,22 @@ export default function IssueMapPage() {
 
     fetchIssues();
   }, [filters, queryString]);
+
+  const handleGetSuggestions = async (issueId) => {
+    setLoadingIssueId(issueId);
+
+    try {
+      const payload = await getIssueRecommendations(issueId);
+      setRecommendationsByIssue((current) => ({
+        ...current,
+        [issueId]: payload.data || []
+      }));
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoadingIssueId("");
+    }
+  };
 
   return (
     <main className="map-page">
@@ -94,7 +112,14 @@ export default function IssueMapPage() {
 
       {loading && <p>Loading map data...</p>}
       {error && <p className="error-text">{error}</p>}
-      {!loading && !error && <IssueMap issues={issues} />}
+      {!loading && !error && (
+        <IssueMap
+          issues={issues}
+          onGetSuggestions={handleGetSuggestions}
+          recommendationsByIssue={recommendationsByIssue}
+          loadingIssueId={loadingIssueId}
+        />
+      )}
     </main>
   );
 }

@@ -3,6 +3,7 @@ import cors from "cors";
 import morgan from "morgan";
 
 import healthRoutes from "./routes/healthRoutes.js";
+import aiRoutes from "./modules/ai/ai.routes.js";
 import authRoutes from "./modules/auth/auth.routes.js";
 import issueRoutes from "./modules/issues/issue.routes.js";
 import wikiRoutes from "./modules/wiki/wiki.routes.js";
@@ -20,6 +21,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 app.use("/api/health", healthRoutes);
+app.use("/api/v1/ai", aiRoutes);
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/issues", issueRoutes);
 app.use("/api/v1/wiki", wikiRoutes);
