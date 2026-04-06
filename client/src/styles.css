@@ -76,6 +76,68 @@ a {
   padding-left: 1rem;
 }
 
+.comment-toggle-btn,
+.reply-btn {
+  margin-top: 0.5rem;
+  padding: 0.3rem 0.55rem;
+  border: 1px solid #94a3b8;
+  border-radius: 0.3rem;
+  background: #f8fafc;
+  cursor: pointer;
+}
+
+.comments-panel {
+  margin-top: 0.5rem;
+  max-height: 260px;
+  overflow-y: auto;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 0.5rem;
+}
+
+.comment-item {
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.45rem;
+  margin-bottom: 0.45rem;
+}
+
+.comment-meta {
+  margin: 0;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.comment-item p,
+.comment-reply-item p {
+  margin: 0.2rem 0;
+}
+
+.comment-reply-item {
+  margin-top: 0.35rem;
+  margin-left: 0.75rem;
+  padding-left: 0.45rem;
+  border-left: 2px solid #cbd5e1;
+}
+
+.reply-box,
+.comment-editor {
+  margin-top: 0.35rem;
+}
+
+.reply-box textarea,
+.comment-editor textarea {
+  width: 100%;
+  resize: vertical;
+  padding: 0.35rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.35rem;
+}
+
+.comment-error {
+  color: #b91c1c;
+  margin: 0.2rem 0;
+  font-weight: 600;
+}
+
 @media (max-width: 768px) {
   .issue-map {
     height: 58vh;

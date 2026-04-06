@@ -33,4 +33,24 @@ export const getIssueRecommendations = async (issueId) => {
 	return fetchJson(`${API_URL}/v1/ai/recommend/${issueId}`);
 };
 
+export const getComments = async (refType, refId) => {
+	const query = new URLSearchParams({ refType, refId });
+	return fetchJson(`${API_URL}/v1/comments?${query.toString()}`);
+};
+
+export const createComment = async (payload, token) => {
+	if (!token) {
+		throw new Error("Login required to comment");
+	}
+
+	return fetchJson(`${API_URL}/v1/comments`, {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+			Authorization: `Bearer ${token}`
+		},
+		body: JSON.stringify(payload)
+	});
+};
+
 export default API_URL;

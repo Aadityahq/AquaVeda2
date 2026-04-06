@@ -26,8 +26,8 @@
 
 ## 🤝 PHASE 4 — COMMUNITY
 
-- [ ] Comments system
-- [ ] Discussion threads
+- [x] Comments system
+- [x] Discussion threads
 
 ## 🧠 PHASE 5 — AI ENGINE
 
@@ -122,14 +122,14 @@ Exit criteria:
 
 Goal: bring collaboration and first recommendation value.
 
-- [ ] Comments on articles/issues
-- [ ] Thread replies (single depth initially)
+- [x] Comments on articles/issues
+- [x] Thread replies (single depth initially)
 - [x] Rule-based recommendation service
 - [x] Recommendation endpoint by issue/article context
 
 Exit criteria:
 
-- [ ] Users can discuss content via comments
+- [x] Users can discuss content via comments
 - [x] Recommendation API returns deterministic suggestions from rule set
 
 ### Sprint 5 - Dashboards + Projects + Quality

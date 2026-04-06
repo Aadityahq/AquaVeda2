@@ -25,3 +25,4 @@
 [2026-04-07] - Issues - Filter API, map data API, and Leaflet frontend map with filters implemented and validated
 [2026-04-07] - AI - Rule-based recommendation engine, API endpoint, and map popup suggestion flow implemented and validated
 [2026-04-07] - Planning - Documented deferred Gemini hybrid-AI integration strategy for later implementation (no code changes)
+[2026-04-07] - Community - Comment and reply system for issue discussions implemented and validated
