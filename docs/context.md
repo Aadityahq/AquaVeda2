@@ -67,6 +67,7 @@ Aquaveda is a geo-intelligent water conservation platform combining knowledge sh
 - Access control hardened with JWT verification, role guards, and protected me endpoint
 - Seed system added for baseline ADMIN and EXPERT users
 - Shared API response contract introduced with centralized error and not-found shapes
+- Wiki module started with article model, protected creation, expert approval, and approved-only public listing
 
 ---
 
