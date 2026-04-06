@@ -1,33 +1,28 @@
 import { loginUser, registerUser } from "./auth.service.js";
+import { error, success } from "../../utils/response.js";
 
 export const register = async (req, res) => {
   try {
     const user = await registerUser(req.body);
-    res.status(201).json({ success: true, data: user });
+    return success(res, user, "User registered", 201);
   } catch (err) {
-    res.status(400).json({ success: false, message: err.message });
+    return error(res, err.message, 400);
   }
 };
 
 export const login = async (req, res) => {
   try {
     const result = await loginUser(req.body);
-    res.json({ success: true, data: result });
+    return success(res, result, "Login successful");
   } catch (err) {
-    res.status(400).json({ success: false, message: err.message });
+    return error(res, err.message, 400);
   }
 };
 
 export const me = async (req, res) => {
   try {
-    res.json({
-      success: true,
-      data: req.user
-    });
+    return success(res, req.user, "Current user");
   } catch (err) {
-    res.status(500).json({
-      success: false,
-      message: "Server error"
-    });
+    return error(res, "Server error", 500);
   }
 };

@@ -64,6 +64,9 @@ Aquaveda is a geo-intelligent water conservation platform combining knowledge sh
 - Env example files added for server, client, and AI service
 - Server runtime validated with local MongoDB URI and successful connection
 - Auth foundation started: user model added, register and login endpoints live under /api/v1/auth
+- Access control hardened with JWT verification, role guards, and protected me endpoint
+- Seed system added for baseline ADMIN and EXPERT users
+- Shared API response contract introduced with centralized error and not-found shapes
 
 ---
 

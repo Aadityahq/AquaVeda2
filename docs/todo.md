@@ -71,8 +71,8 @@ Goal: unlock secure user flows and stable data models so feature work can procee
 - [x] JWT middleware + protected route guard
 - [x] Role middleware (USER, EXPERT, ADMIN)
 - [ ] User model with role and profile basics
-- [ ] Shared API response + error shape
-- [ ] Seed script for admin and expert test users
+- [x] Shared API response + error shape
+- [x] Seed script for admin and expert test users
 
 Exit criteria:
 

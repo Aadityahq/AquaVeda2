@@ -5,7 +5,7 @@ import morgan from "morgan";
 import healthRoutes from "./routes/healthRoutes.js";
 import authRoutes from "./modules/auth/auth.routes.js";
 import { notFound } from "./middlewares/notFound.js";
-import { errorHandler } from "./middlewares/errorHandler.js";
+import { errorHandler } from "./middlewares/error.middleware.js";
 
 const app = express();
 
@@ -21,7 +21,7 @@ app.use("/api/health", healthRoutes);
 app.use("/api/v1/auth", authRoutes);
 
 app.get("/", (req, res) => {
-  res.json({ message: "Aquaveda API is running" });
+  res.json({ success: true, message: "Aquaveda API is running" });
 });
 
 app.use(notFound);
