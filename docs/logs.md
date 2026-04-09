@@ -28,3 +28,4 @@
 [2026-04-07] - Community - Comment and reply system for issue discussions implemented and validated
 [2026-04-07] - Projects - Collaboration module implemented with create, join, list, and creator-controlled progress tracking
 [2026-04-07] - Docs - Rewrote AquaVeda README with structured overview, setup, architecture, API, and future scope
+[2026-04-10] - UI - Sprint 6A implemented with design tokens, shared app layout shell, standardized route page wrappers, and baseline accessibility rules

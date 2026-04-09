@@ -64,16 +64,17 @@ export default function IssueMapPage() {
   };
 
   return (
-    <main className="map-page">
+    <section className="page-panel map-page">
       <header className="map-header">
-        <h1>Water Issues Map</h1>
-        <p>View and filter reported water issues in map format.</p>
+        <h2 className="page-title">Water Issues Map</h2>
+        <p className="muted-text">View and filter reported water issues in map format.</p>
       </header>
 
       <section className="map-filters">
-        <label>
+        <label htmlFor="severity-filter">
           Severity
           <select
+            id="severity-filter"
             value={filters.severity}
             onChange={(event) => {
               setFilters((current) => ({
@@ -90,9 +91,10 @@ export default function IssueMapPage() {
           </select>
         </label>
 
-        <label>
+        <label htmlFor="status-filter">
           Status
           <select
+            id="status-filter"
             value={filters.status}
             onChange={(event) => {
               setFilters((current) => ({
@@ -120,6 +122,6 @@ export default function IssueMapPage() {
           loadingIssueId={loadingIssueId}
         />
       )}
-    </main>
+    </section>
   );
 }

@@ -173,17 +173,17 @@ Exit criteria:
 
 Goal: establish a consistent visual and layout foundation for all current and upcoming pages.
 
-- [ ] Define design tokens in `client/src/styles.css`: color palette, spacing scale, typography scale, border radius, and shadows
-- [ ] Create global utility classes in `client/src/styles.css`: containers, grids, stacks, section spacing, and responsive helpers
-- [ ] Implement shared root layout in `client/src/layouts` and wire it in `client/src/App.jsx`
-- [ ] Standardize page wrapper structure in `client/src/App.jsx` for Home, Health, and Issues Map routes
-- [ ] Add baseline accessibility rules: visible focus states, minimum tap targets, and readable text contrast
+- [x] Define design tokens in `client/src/styles.css`: color palette, spacing scale, typography scale, border radius, and shadows
+- [x] Create global utility classes in `client/src/styles.css`: containers, grids, stacks, section spacing, and responsive helpers
+- [x] Implement shared root layout in `client/src/layouts` and wire it in `client/src/App.jsx`
+- [x] Standardize page wrapper structure in `client/src/App.jsx` for Home, Health, and Issues Map routes
+- [x] Add baseline accessibility rules: visible focus states, minimum tap targets, and readable text contrast
 
 Exit criteria:
 
-- [ ] All active pages use shared spacing and typography rules
-- [ ] Layout behavior is consistent across desktop and mobile breakpoints
-- [ ] No inline style duplication for common page shell patterns
+- [x] All active pages use shared spacing and typography rules
+- [x] Layout behavior is consistent across desktop and mobile breakpoints
+- [x] No inline style duplication for common page shell patterns
 
 ### Sprint 6B - Reusable Components + Map UX Upgrade
 
