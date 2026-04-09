@@ -167,6 +167,65 @@ Exit criteria:
 
 ---
 
+## 🎨 UI DEVELOPMENT PLAN (Execution-Ready)
+
+### Sprint 6A - UI Foundation System
+
+Goal: establish a consistent visual and layout foundation for all current and upcoming pages.
+
+- [ ] Define design tokens in `client/src/styles.css`: color palette, spacing scale, typography scale, border radius, and shadows
+- [ ] Create global utility classes in `client/src/styles.css`: containers, grids, stacks, section spacing, and responsive helpers
+- [ ] Implement shared root layout in `client/src/layouts` and wire it in `client/src/App.jsx`
+- [ ] Standardize page wrapper structure in `client/src/App.jsx` for Home, Health, and Issues Map routes
+- [ ] Add baseline accessibility rules: visible focus states, minimum tap targets, and readable text contrast
+
+Exit criteria:
+
+- [ ] All active pages use shared spacing and typography rules
+- [ ] Layout behavior is consistent across desktop and mobile breakpoints
+- [ ] No inline style duplication for common page shell patterns
+
+### Sprint 6B - Reusable Components + Map UX Upgrade
+
+Goal: reduce UI duplication and improve map-page usability and clarity.
+
+- [ ] Build reusable UI primitives (Button, Input, Select, Card, Alert, Loading) and integrate into `client/src/pages/IssueMapPage.jsx`
+- [ ] Refactor map filter controls in `client/src/pages/IssueMapPage.jsx` to use common component styles
+- [ ] Improve marker popup hierarchy in `client/src/components/IssueMap.jsx`: clearer title, severity or status chips, and action grouping
+- [ ] Upgrade comment thread readability in `client/src/components/IssueMap.jsx`: spacing, indentation, and reply affordance
+- [ ] Add clear loading, empty, and error UI states for issue, comment, and recommendation actions using `client/src/services/api.js` response patterns
+
+Exit criteria:
+
+- [ ] Map filters, popups, and comment blocks follow common UI components
+- [ ] Users receive clear feedback for loading, success, empty, and failure states
+- [ ] Existing issue-map behavior remains functionally unchanged
+
+### Sprint 6C - Dashboard UI Foundations + QA Hardening
+
+Goal: prepare UI architecture for dashboard work and lock quality standards.
+
+- [ ] Create dashboard page shells in `client/src/pages`: user dashboard structure and admin dashboard structure
+- [ ] Define reusable metric-card and panel patterns for dashboard views
+- [ ] Add lightweight reusable hooks in `client/src/hooks` for async UI state handling and filter-state reuse
+- [ ] Run accessibility pass across active pages: keyboard flow, labels, focus order, and contrast checks
+- [ ] Run responsive pass across key widths: mobile, tablet, and desktop
+- [ ] Run regression pass on map, comments, and AI suggestion flow in `client/src/components/IssueMap.jsx`
+
+Exit criteria:
+
+- [ ] Dashboard screens have production-ready UI scaffolding
+- [ ] Primary interactions are keyboard-accessible
+- [ ] UI is stable across major viewport sizes
+- [ ] No regressions in map markers, comment actions, or recommendation retrieval
+
+### Scope Boundary
+
+- [ ] Included: frontend UI architecture, design consistency, accessibility baseline, responsive behavior, and interaction-state quality
+- [ ] Excluded: backend API contract changes, auth logic changes, and deferred hybrid AI backend rollout
+
+---
+
 ## Deferred Later (Not In Current Scope)
 
 - [ ] Hybrid AI layer: keep rule-based engine as primary and add optional Gemini-powered contextual suggestions
